@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Selecciones Mundial</title>
+</head>
+<body>
+<form>
+    <fieldset>
+    <legend>Filtro</legend>
+        <label>Buscar <input type="text" nane="continente" list="continentes"/>
+        <datalist id ="continentes">
+            {%  for seleccion in selecciones %}
+                  <option value="{{seleccion.continente}}"></option>
+            {% endfor %}
+        </datalist>
+    </fieldset>
+</form>
+
+            {%  for seleccion in selecciones %}
+        <table border="1">
+              <tr>
+                  <th>seleccion</th>
+                  <th>continente</th>
+                  <th>mundiales_ganados</th>
+              </tr>
+              <tr>
+
+                  <td>{{seleccion.seleccion}}</td>
+                  <td>{{seleccion.continente}}</td>
+                  <td>{{seleccion.mundiales_ganados}}</td>
+
+              </tr>
+            {% endfor %}
+        </table>
+
+        <li><a href="{% url 'aniadir_selec' %}">añadir selecciones</a></li>
+
+</body>
+</html>

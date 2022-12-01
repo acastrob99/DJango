@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alumnos</title>
+</head>
+<body>
+  {%  for alumno in listado_alumnos %}
+    <p> El alumno {{alumno.nombre}} {{alumno.apellidos}} tiene el DNI {{alumno.dni}}></p>
+  {% endfor %}
+</body>
+</html>
